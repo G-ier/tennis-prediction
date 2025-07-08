@@ -38,13 +38,14 @@ This project implements an autoencoder-based model for unsupervised learning and
 - Visualization utilities for reconstructions and latent space
 - Model saving and loading functionality
 - Command-line interface for training and evaluation
+- Baseline Random Forest classifier for supervised tennis match prediction
 
 ## Installation
 
 1. Clone the repository:
 ```bash
 git clone <repository-url>
-cd tn
+cd tennis-prediction
 ```
 
 2. Create and activate a virtual environment (optional):
@@ -111,6 +112,40 @@ The framework supports the following types of autoencoders:
 1. **Standard Autoencoder (AE)**: A neural network that learns to encode the input data into a lower-dimensional latent space and then decode it back to the original space, minimizing reconstruction error.
 
 2. **Variational Autoencoder (VAE)**: An extension of the standard autoencoder that adds a probabilistic element to the latent space, enabling generative capabilities.
+
+3. **Random Forest Classifier (RF)**: A supervised learning baseline that predicts match outcomes using engineered tennis features.
+
+## Random Forest Model (Baseline)
+
+While the core of this repository focuses on unsupervised representation learning with autoencoders, it also ships with a conventional supervised baseline built around a **Random Forest classifier**.
+
+### Training the Random Forest
+
+The training script ingests the prepared tennis dataset, splits it into train ⁄ test subsets, and fits a `sklearn.ensemble.RandomForestClassifier`.
+
+```bash
+# From the project root
+python src/rf/rf_training.py
+```
+
+Key parameters such as the number of trees (`n_estimators`) or maximum tree depth (`max_depth`) can be edited at the top of `src/rf/rf_training.py` or adapted to a CLI if needed.  
+By default the trained model is saved to `src/training/models/random_forest_model.joblib`.
+
+### Generating Predictions
+
+After a model has been trained (or if you have provided a pre-trained `random_forest_model.joblib`), predictions on fresh data can be generated with:
+
+```bash
+python src/rf/predict_with_rf.py
+```
+
+The script outputs two CSVs in the `data/` folder:
+
+* `rf_predictions.csv` – row-wise winner predictions with confidence scores.
+
+The prediction script conveniently merges predictions back with player names for easy human inspection.
+
+Feel free to tweak either script to point to different datasets or model locations as required.
 
 ## Support
 
