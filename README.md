@@ -1,5 +1,5 @@
 # Autoencoder-Based Model
-Support my work: [Buy me a coffee](https://coff.ee/gier)
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=flat-square&logo=buy-me-a-coffee&logoColor=000000)](https://coff.ee/gier)
 
 This project implements an autoencoder-based model for unsupervised learning and dimensionality reduction. It provides a flexible framework for training and evaluating different types of autoencoders on various datasets.
 
@@ -114,4 +114,5 @@ The framework supports the following types of autoencoders:
 
 ## Support
 
-If you find this project useful, please consider supporting me by buying me a coffee: https://coff.ee/gier
+If you find this project useful, please consider supporting me by buying me a coffee:<br/><br/>
+<a href="https://coff.ee/gier" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="220" ></a>
