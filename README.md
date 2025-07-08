@@ -44,7 +44,7 @@ This project implements an autoencoder-based model for unsupervised learning and
 1. Clone the repository:
 ```bash
 git clone <repository-url>
-cd autoencoder-model
+cd tn
 ```
 
 2. Create and activate a virtual environment (optional):
@@ -115,11 +115,3 @@ The framework supports the following types of autoencoders:
 ## Support
 
 If you find this project useful, please consider supporting me by buying me a coffee: https://coff.ee/gier
-
-## License
-
-[Specify the license here]
-
-## Acknowledgements
-
-[Add any acknowledgements here] 
